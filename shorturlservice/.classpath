@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/test/java" output="target/test-classes"/>
+  <classpathentry kind="src" path="src/main/java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/4.4/junit-4.4.jar" sourcepath="M2_REPO/junit/junit/4.4/junit-4.4-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.16/log4j-1.2.16.jar" sourcepath="M2_REPO/log4j/log4j/1.2.16/log4j-1.2.16-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" sourcepath="M2_REPO/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4.jar" sourcepath="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/jdom/jdom/1.1/jdom-1.1.jar" sourcepath="M2_REPO/org/jdom/jdom/1.1/jdom-1.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar" sourcepath="M2_REPO/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar" sourcepath="M2_REPO/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar" sourcepath="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mybatis/mybatis/3.2.1/mybatis-3.2.1.jar" sourcepath="M2_REPO/org/mybatis/mybatis/3.2.1/mybatis-3.2.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.26/mysql-connector-java-5.1.26.jar"/>
+</classpath>

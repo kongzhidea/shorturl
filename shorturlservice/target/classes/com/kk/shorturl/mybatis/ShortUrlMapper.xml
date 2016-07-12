@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace表示命名空间，可以映射到接口中，id和方法名一致 -->
+<mapper namespace="com.kk.shorturl.dao.ShortUrlDao">
+	<!-- 可以在Configuration.xml中设置model的别名 -->
+	<!--支持column和field映射 类型而定义的returnMap -->
+	<resultMap type="ShortUrl" id="ResShortUrl">
+		<id column="id" property="id" />
+		<result column="original_url" property="originalUrl" />
+		<result column="encrypted_url" property="encryptedUrl" />
+		<result column="create_time" property="createTime" />
+		<result column="visit_count" property="visitCount" />
+	</resultMap>
+
+	<!-- resultType是model和column一一映射，如果不能对应则不能赋值，可以在Configuration.xml指定别名 -->
+	<!-- resultMap是将column和field一一映射，用于解决column和field不一致的情况,在本sqlmap.xml中配置即可 -->
+	<select id="selectShortUrlByEncrypt" parameterType="string"
+		resultMap="ResShortUrl">
+		select
+		id,original_url,encrypted_url,create_time,visit_count
+		from short_url where encrypted_url=#{encryptUrl}
+	</select>
+
+	<!--执行增加操作的SQL语句。id和parameterType 分别与IUserOperation接口中的addUser方法的名字和 参数类型一致。以#{name}的形式引用Student参数 
+		的name属性，MyBatis将使用反射读取Student参数 的此属性。#{name}中name大小写敏感。引用其他 的gender等属性与此一致。seGeneratedKeys设置 
+		为"true"表明要MyBatis获取由数据库自动生成的主 键；keyProperty="id"指定把获取到的主键值注入 到Student的id属性 -->
+	<!-- 增加后，必须提交事务，否则不会写入到数据库. -->
+	<insert id="add" parameterType="ShortUrl" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into
+		short_url(original_url,encrypted_url,create_time,visit_count)
+		values(#{originalUrl},#{encryptedUrl},#{createTime},#{visitCount})
+	</insert>
+
+	<select id="getCount" parameterType="string" resultType="int">
+		select
+		count(id)
+		from short_url where encrypted_url=#{encryptUrl}
+	</select>
+
+	<update id="incrViewCount" parameterType="string">
+		update short_url
+		set
+		visit_count = visit_count + 1
+		where encrypted_url=#{encryptUrl}
+	</update>
+
+	<select id="selectShortUrlByEncrypts" resultMap="ResShortUrl">
+		Select
+		id,original_url,encrypted_url,create_time,visit_count
+		from
+		short_url where encrypted_url in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="selectShortUrlByEncrypts2" resultMap="ResShortUrl">
+		Select
+		id,original_url,encrypted_url,create_time,visit_count
+		from
+		short_url where encrypted_url in
+		<foreach item="item" index="index" collection="array" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+</mapper>
